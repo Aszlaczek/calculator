@@ -1,12 +1,14 @@
 
 type Props = {
-    item: string[]
+    item: number,
+    list: number[]
 }
 function Answer(props: Props) {
     return (
-        <div className="fs-1">
-            {props.item.length === 0 ? '0' : props.item}
+        <div className="fs-1 bg-danger ">
+            {props.item ? props.item : '0'}
         </div>
+
     )
 }
 
