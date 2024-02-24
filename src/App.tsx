@@ -3,7 +3,7 @@ import Buttons from './components/Buttons'
 import './css/App.css'
 function App() {
 
-  const [result, setResult] = useState([])
+  const [result, setResult] = useState<string[]>([])
   const [value, setValue] = useState('0')
   const buttons = [
     'C', '%', 'del', '/',
@@ -15,20 +15,72 @@ function App() {
   const numbers: string[] = [
     '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '00'
   ]
-  const action: string[] = [
-    'C', '%', 'del', '/', 'X', '-', '+', '=', '.'
-  ]
   function Add(e: string) {
     value === '0' ? setValue(e)
       : numbers.find(item => {
-        item === e ? setValue(value + e) : '';
+        if (item === e && e !== '00') {
+          setValue(value + e)
+        }
       });
+
   }
   function AddToList(e: string) {
-    const list: string[] = [...result];
-    list.length == 0 ? list.push(value) : alert('dziala')
-    console.log(list)
+    let list = [...result];
+    let val = value
+    if (e === 'del') {
+      return (val.length != 1
+        ? val = val.substring(0, val.length - 1)
+        : val = '0',
+        setValue(val)
+      )
+    }
+    if (e === '.') {
+      if (list.length == 0 && !val.includes(e)) {
+        val += e
+      }
+      !val.includes(e) ? val += e : ''
+      return setValue(val)
+    }
+    if (list.length == 0 && e != '=') {
+      list.push(val)
+      list.push(e)
+      val = '0'
+    }
+    if (list[1] != null) {
+      switch (e) {
+        case 'C':
+          list = []
+          val = '0'
+          break;
+        case '=':
+          console.log(list);
+          console.log(val)
+          break;
+        case '+':
+          list[1] = e
+          break;
+        case '-':
+          list[1] = e
+          break;
+        case 'X':
+          list[1] = e
+          break;
+        case '/':
+          list[1] = e
+          break;
+        case '.':
+          list.pop()
+          break;
+
+        default:
+          break;
+      }
+    }
+    else {
+      alert('Najpierw napisz działanie')
+    }
     setResult(list)
+    setValue(val)
   }
   function chose(e: string) {
     let pom: boolean = false;
