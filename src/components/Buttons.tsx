@@ -1,4 +1,6 @@
 const Buttons = (props: { buttons: string[], handleClick: Function }) => {
+    // Przypisanie odpowiedniej wartości do zmiennej 
+    // ze zmiennej typu props
     const { buttons, handleClick } = props
 
     return (
