@@ -1,0 +1,15 @@
+:root {
+    --font-color: #ffffff;
+    --primary_color: rgb(251, 251, 251);
+    --secondary-color: #c32b2b;
+    --backgroud-color: #000000;
+    --font-large: 5svh;
+    --font-medium: 3svh;
+    --font-small: 1svh;
+}
+
+body {
+    overflow: hidden;
+    font-style: italic;
+    color: var(--font-color);
+}

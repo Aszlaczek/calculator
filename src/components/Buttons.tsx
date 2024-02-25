@@ -7,7 +7,7 @@ const Buttons = (props: { buttons: string[], handleClick: Function }) => {
         <>
             {buttons.map((el, i) => {
                 return (
-                    <button type='button' onClick={() => handleClick(el)} className="item" key={i}>{el}</button>
+                    <button type='button' id={'btn' + i} onClick={() => handleClick(el)} className="item" key={i} > {el}</button >
                 )
             })}
         </>
