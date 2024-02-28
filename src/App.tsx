@@ -109,11 +109,11 @@ function App() {
         case '/':
           list[1] = e
           break;
+        case '%':
+          list[1] = e;
+          break
         case '.':
           list.pop()
-          break;
-
-        default:
           break;
       }
     }

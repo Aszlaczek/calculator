@@ -14,7 +14,7 @@ h1 {
 
 .card-body {
     background-color: var(--backgroud-color);
-    border: .5em solid var(--secondary-color);
+    /* border: .5em solid var(--secondary-color); */
     display: grid;
     grid-template-rows: 5% 20% 75%;
 }
@@ -35,7 +35,7 @@ h1 {
     /* background-color: var(--secondary-color); */
     display: grid;
     place-items: end;
-    padding: 1rem;
+    padding: 1rem 10rem;
     margin: auto;
     width: 100%;
     color: var(--font-color);
