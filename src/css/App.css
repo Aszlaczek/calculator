@@ -33,11 +33,12 @@ h1 {
 
 .answer {
     /* background-color: var(--secondary-color); */
+    word-break: break-all;
     display: grid;
     place-items: end;
     padding: 1rem 10rem;
     margin: auto;
-    width: 100%;
+    width: 100svw;
     color: var(--font-color);
 
 }
@@ -51,6 +52,7 @@ h1 {
     font-size: var(--font-large);
     grid-row: 2;
     max-width: 100%;
+
 }
 
 /* -------------------- Butttons ----------------------- */
