@@ -26,7 +26,7 @@ const App = () => {
   ];
 
   const [number, setNumber] = useState("0");
-  const [res, setRes] = useState("");
+  const [res, setRes] = useState("0");
 
   return (
     <main>
