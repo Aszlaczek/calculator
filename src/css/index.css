@@ -1,15 +1,37 @@
-:root {
-    --font-color: #ffffff;
-    --primary_color: rgb(251, 251, 251);
-    --secondary-color: #c32b2b;
-    --backgroud-color: #000000;
-    --font-large: 5svh;
-    --font-medium: 3svh;
-    --font-small: 1svh;
+*::after,
+*::before,
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    overflow: hidden;
-    font-style: italic;
-    color: var(--font-color);
+  background-color: black;
+  color: white;
+  font-size: 1.75rem;
+  min-height: 100svh;
+  min-width: 100svw;
+
+  display: grid;
+  grid-template-columns: minmax(1rem, 1fr) min(100% - 2rem, 800px) minmax(
+      1rem,
+      1fr
+    );
+  padding-block: 1rem;
+}
+body > * {
+  grid-column: 2;
+}
+
+main {
+  display: grid;
+  grid-template-rows: min-content min-content 1fr;
+  outline: 1px solid red;
+  height: 100%;
+}
+
+.res1,
+.res2 {
+  place-self: end;
 }
