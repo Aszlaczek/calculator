@@ -1,16 +1,39 @@
 .buttons {
-  grid-row: 3/5;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   min-height: 100%;
+  background-image: radial-gradient(transparent, black);
+  box-shadow: inset 0px 0px 50px white;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
 }
-
-.item:nth-child(17) {
-  grid-column: 1/3;
+.item {
+  font-size: clamp(1.5rem, 10svw, 5rem);
+  background-color: transparent;
+  color: white;
+  padding: 0 0.2rem;
+  text-shadow: 1px 1px 1px black;
+  &:nth-child(17) {
+    grid-column: 1/3;
+    border-bottom-left-radius: 30px;
+  }
+  &:last-child {
+    border-bottom-right-radius: 30px;
+  }
 }
 
 #title {
   display: grid;
-  font-size: 3.25rem;
   padding-inline: 0.5rem;
+  grid-template-rows: 1fr 1fr;
+  color: white;
+  max-width: 100%;
+  & > span {
+    display: grid;
+    place-items: center end;
+    font-size: clamp(2rem, 10svw, 4rem);
+    &:first-child {
+      opacity: 0.2;
+    }
+  }
 }
