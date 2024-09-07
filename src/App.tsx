@@ -99,7 +99,7 @@ const App = () => {
   };
 
   return (
-    <main>
+    <>
       <div id="title">
         <span className="res1">{result}</span>
         <span className="res2">{input}</span>
@@ -107,7 +107,7 @@ const App = () => {
       <div className="buttons">
         <Buttons list={listAll} onClick={handleButtonClick} />
       </div>
-    </main>
+    </>
   );
 };
 

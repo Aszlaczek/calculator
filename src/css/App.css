@@ -1,24 +1,26 @@
 .buttons {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  min-height: 100%;
+  height: 100%;
   background-image: radial-gradient(transparent, black);
   box-shadow: inset 0px 0px 50px white;
-  border-bottom-left-radius: 30px;
-  border-bottom-right-radius: 30px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
 }
+
 .item {
-  font-size: clamp(1.5rem, 10svw, 5rem);
+  font-size: clamp(1.5rem, 10svw, 3rem);
   background-color: transparent;
   color: white;
   padding: 0 0.2rem;
   text-shadow: 1px 1px 1px black;
+  border: none;
   &:nth-child(17) {
     grid-column: 1/3;
-    border-bottom-left-radius: 30px;
+    border-bottom-left-radius: 20px;
   }
   &:last-child {
-    border-bottom-right-radius: 30px;
+    border-bottom-right-radius: 20px;
   }
 }
 
@@ -27,7 +29,6 @@
   padding-inline: 0.5rem;
   grid-template-rows: 1fr 1fr;
   color: white;
-  max-width: 100%;
   & > span {
     display: grid;
     place-items: center end;
