@@ -1,19 +1,15 @@
-const Buttons = (props: { buttons: string[], handleClick: Function }) => {
-    // Przypisanie odpowiedniej wartości do zmiennej 
-    // ze zmiennej typu props
-    const { buttons, handleClick } = props
+const Buttons = (props: { list: (string | number)[]; onClick: Function }) => {
+  return (
+    <>
+      {props.list.map((e, id) => {
+        return (
+          <button key={id} onClick={() => props.onClick(e)} className="item">
+            {e}
+          </button>
+        );
+      })}
+    </>
+  );
+};
 
-    return (
-        <>
-            {buttons.map((el, i) => {
-                return (
-                    <button type='button' id={'btn' + i} onClick={() => handleClick(el)} className="item" key={i} > {el}</button >
-                )
-            })}
-        </>
-    )
-}
-
-export default Buttons
-
-
+export default Buttons;
