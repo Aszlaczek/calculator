@@ -12,18 +12,6 @@
         ]
       }
     ],
-    "typescript-config/is-valid": "off",
-    "axe/name-role-value": [
-      "default",
-      {
-        "button-name": "off"
-      }
-    ],
-    "axe/forms": [
-      "default",
-      {
-        "label": "off"
-      }
-    ]
+    "typescript-config/is-valid": "off"
   }
 }

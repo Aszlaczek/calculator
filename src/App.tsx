@@ -280,6 +280,7 @@ const App: React.FC = () => {
               className="toolbar-btn"
               onClick={() => setIsHistoryOpen(true)}
               title="View History Tape"
+              aria-label="View calculation history"
             >
               📜 History
             </button>
@@ -288,6 +289,7 @@ const App: React.FC = () => {
               value={theme}
               onChange={(e) => setTheme(e.target.value)}
               title="Switch Visual Theme"
+              aria-label="Select visual theme"
             >
               <option value="cyberpunk">Cyberpunk Neon</option>
               <option value="glass">Glass Dream</option>
@@ -305,6 +307,8 @@ const App: React.FC = () => {
                   audioSynth.playClick();
                 }}
                 title="Toggle Graphing Plotter mode"
+                aria-label="Toggle graphing mode"
+                aria-pressed={isGraphMode}
               >
                 📈 Graph
               </button>
@@ -316,6 +320,8 @@ const App: React.FC = () => {
                 audioSynth.playClick();
               }}
               title="Toggle Scientific Layout"
+              aria-label="Toggle scientific calculator layout"
+              aria-pressed={isScientific}
             >
               🔬 Scientific
             </button>
@@ -323,6 +329,8 @@ const App: React.FC = () => {
               className="toolbar-btn"
               onClick={() => setIsMuted(!isMuted)}
               title={isMuted ? "Unmute sounds" : "Mute sounds"}
+              aria-label={isMuted ? "Unmute calculator sounds" : "Mute calculator sounds"}
+              aria-pressed={isMuted}
             >
               {isMuted ? "🔇" : "🔊"}
             </button>

@@ -397,6 +397,8 @@ const Visualizer = forwardRef<VisualizerRef, VisualizerProps>(
         onMouseUp={handleMouseUpOrLeave}
         onMouseLeave={handleMouseUpOrLeave}
         onWheel={handleWheel}
+        role="img"
+        aria-label={graphExpression ? `Graph of ${graphExpression}` : "Interactive particle visualizer"}
       />
     );
   }

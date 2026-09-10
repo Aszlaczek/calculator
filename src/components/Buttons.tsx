@@ -51,6 +51,55 @@ const Buttons: React.FC<ButtonsProps> = ({ list, onClick, activeKey }) => {
     }
   };
 
+  // Accessible label for screen readers
+  const getAriaLabel = (val: string | number): string => {
+    const sVal = val.toString();
+    switch (sVal) {
+      case "*":
+        return "Multiply";
+      case "/":
+        return "Divide";
+      case "+":
+        return "Add";
+      case "-":
+        return "Subtract";
+      case "=":
+        return "Equals";
+      case "%":
+        return "Percent";
+      case "^":
+        return "Power";
+      case "AC":
+        return "All Clear";
+      case "Delete":
+        return "Delete last character";
+      case "sin":
+        return "Sine";
+      case "cos":
+        return "Cosine";
+      case "tan":
+        return "Tangent";
+      case "sqrt":
+        return "Square root";
+      case "log":
+        return "Logarithm base 10";
+      case "ln":
+        return "Natural logarithm";
+      case "abs":
+        return "Absolute value";
+      case "(":
+        return "Left parenthesis";
+      case ")":
+        return "Right parenthesis";
+      case "x":
+        return "Variable x";
+      case ".":
+        return "Decimal point";
+      default:
+        return sVal;
+    }
+  };
+
   return (
     <>
       {list.map((e, id) => {
@@ -69,6 +118,7 @@ const Buttons: React.FC<ButtonsProps> = ({ list, onClick, activeKey }) => {
             className={`${getButtonClass(e)} ${layoutClass}`}
             type="button"
             data-key={e}
+            aria-label={getAriaLabel(e)}
           >
             {formatLabel(e)}
           </button>

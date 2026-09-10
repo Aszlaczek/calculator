@@ -79,7 +79,7 @@ const HistoryDrawer: React.FC<HistoryDrawerProps> = ({
       {/* Footer controls */}
       {history.length > 0 && (
         <div className="drawer-footer">
-          <button className="clear-btn" onClick={onClearHistory}>
+          <button className="clear-btn" onClick={onClearHistory} aria-label="Clear calculation history">
             Clear History
           </button>
         </div>
