@@ -1,57 +1,30 @@
-# Visualizer Calculator
+# React + TypeScript + Vite
 
-Interactive calculator built with React, TypeScript, and Vite featuring real-time particle visualizations, multiple themes, and scientific computing capabilities.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-## Features
+Currently, two official plugins are available:
 
-- **Standard & Scientific modes** — switch between basic arithmetic and advanced functions (sin, cos, tan, sqrt, log, ln, abs)
-- **Graphing mode** — plot mathematical functions (e.g., `sin(x)`, `x^2 + 1`) with pan & zoom support
-- **Particle visualizer** — animated particles triggered on each button press, with theme-dependent colors and glow effects
-- **4 visual themes** — Cyberpunk Neon, Glass Dream, Retro CRT, Aurora Light
-- **Sound effects** — synthesized audio feedback for clicks, operators, and success/error states
-- **Calculation history** — slide-out drawer with timestamped records, click-to-reuse
-- **Keyboard support** — full keyboard input for numbers, operators, and navigation
-- **Accessibility** — ARIA labels on all interactive elements for screen reader compatibility
-- **Persistent preferences** — theme, mute state, and layout mode saved to localStorage
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Project Structure
+## Expanding the ESLint configuration
 
-```
-src/
-├── App.tsx                 # Main app orchestrator (state, keyboard, layout)
-├── main.tsx                # Entry point
-├── components/
-│   ├── Buttons.tsx         # Calculator button grid with aria-labels
-│   ├── HistoryDrawer.tsx   # Slide-out history panel
-│   └── Visualizer.tsx      # Canvas-based particle & graph renderer
-├── utils/
-│   ├── mathParser.ts       # Tokenizer, recursive-descent parser, AST evaluator
-│   └── audioSynth.ts       # Web Audio API sound synthesis
-└── css/
-    ├── index.css            # Global styles and theme definitions
-    └── App.css              # Component layout styles
+If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+
+- Configure the top-level `parserOptions` property like this:
+
+```js
+export default {
+  // other rules...
+  parserOptions: {
+    ecmaVersion: "latest",
+    sourceType: "module",
+    project: ["./tsconfig.json", "./tsconfig.node.json"],
+    tsconfigRootDir: __dirname,
+  },
+};
 ```
 
-## Tech Stack
-
-- **React 18** with TypeScript
-- **Vite 8** for dev server and bundling
-- **Bootstrap 5** (utility classes only)
-- **Web Audio API** for synthesized sound effects
-- **Canvas API** for real-time visualizations
-
-## Getting Started
-
-```bash
-npm install
-npm run dev
-```
-
-## Scripts
-
-| Command | Description |
-|---------|-------------|
-| `npm run dev` | Start development server |
-| `npm run build` | Type-check and build for production |
-| `npm run preview` | Preview production build |
-| `npm run lint` | Run ESLint |
+- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
+- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
+- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
